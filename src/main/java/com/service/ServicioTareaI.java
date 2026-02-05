@@ -22,12 +22,17 @@ public class ServicioTareaI implements IServicioTarea {
         Tarea tarea = new Tarea();
         log.info("Ingresa la tarea a crear");
         log.info("Ingresa el nombre de la tarea");
-        String descripcion = escanear.nextLine();
+        String descripcion = escanear.nextLine().trim().toLowerCase();
         log.info("Ingresa el estado  de la tarea");
-        String estado = escanear.nextLine();
-        tarea.modificarDescripcion(descripcion);
-        tarea.modificarEstado(estado);
-        tareas.add(tarea);
+        String estado = escanear.nextLine().trim().toLowerCase();
+        if (descripcion.isBlank() || estado.isBlank()) {
+            log.error("Los datos no pueden estar vacíos");
+        } else {
+            tarea.modificarDescripcion(descripcion);
+            tarea.modificarEstado(estado);
+            tareas.add(tarea);
+        }
+
         return tarea;
     }
 
@@ -59,7 +64,7 @@ public class ServicioTareaI implements IServicioTarea {
         id = escanear.nextInt();
         escanear.nextLine();
         log.info("Ingresa el nuevo estado de la tarea");
-        estado = escanear.nextLine();
+        estado = escanear.nextLine().trim().toLowerCase();
 
         Tarea existe = tareas.get(id);
         if (existe != null) {
