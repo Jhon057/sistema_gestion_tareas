@@ -22,7 +22,7 @@ public class TareaControl {
         return servicioTarea.obtenerPorId(id);
     }
 
-    public void tareaCompletada() {
+    public void tareaCompletada() throws TareaExcepciones {
         servicioTarea.tareaCompletada();
     }
 

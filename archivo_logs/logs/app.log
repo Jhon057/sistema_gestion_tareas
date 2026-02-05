@@ -1,0 +1,68 @@
+2026-02-05 14:22:51.287 [main] INFO  com.tareas.Main - Tareas
+2026-02-05 14:22:51.289 [main] INFO  com.tareas.Main - 1. Registrar tarea
+2026-02-05 14:22:51.290 [main] INFO  com.tareas.Main - 2. Listar tareas
+2026-02-05 14:22:51.290 [main] INFO  com.tareas.Main - 3. Buscar por id tarea
+2026-02-05 14:22:51.291 [main] INFO  com.tareas.Main - 4. Cambiar estado de tarea
+2026-02-05 14:22:51.291 [main] INFO  com.tareas.Main - 5. Eliminar tarea por ID
+2026-02-05 14:22:51.292 [main] INFO  com.tareas.Main - 6. Salir
+2026-02-05 14:22:51.292 [main] INFO  com.tareas.Main - Selecciona opción
+2026-02-05 14:36:16.761 [main] INFO  com.tareas.Main - Tareas
+2026-02-05 14:36:16.764 [main] INFO  com.tareas.Main - 1. Registrar tarea
+2026-02-05 14:36:16.765 [main] INFO  com.tareas.Main - 2. Listar tareas
+2026-02-05 14:36:16.766 [main] INFO  com.tareas.Main - 3. Buscar por id tarea
+2026-02-05 14:36:16.767 [main] INFO  com.tareas.Main - 4. Cambiar estado de tarea
+2026-02-05 14:36:16.767 [main] INFO  com.tareas.Main - 5. Eliminar tarea por ID
+2026-02-05 14:36:16.767 [main] INFO  com.tareas.Main - 6. Salir
+2026-02-05 14:36:16.767 [main] INFO  com.tareas.Main - Selecciona opción
+2026-02-05 14:36:29.115 [main] INFO  com.tareas.Main - Tareas
+2026-02-05 14:36:29.123 [main] INFO  com.tareas.Main - 1. Registrar tarea
+2026-02-05 14:36:29.125 [main] INFO  com.tareas.Main - 2. Listar tareas
+2026-02-05 14:36:29.125 [main] INFO  com.tareas.Main - 3. Buscar por id tarea
+2026-02-05 14:36:29.125 [main] INFO  com.tareas.Main - 4. Cambiar estado de tarea
+2026-02-05 14:36:29.125 [main] INFO  com.tareas.Main - 5. Eliminar tarea por ID
+2026-02-05 14:36:29.125 [main] INFO  com.tareas.Main - 6. Salir
+2026-02-05 14:36:29.125 [main] INFO  com.tareas.Main - Selecciona opción
+2026-02-05 14:38:51.975 [main] INFO  com.tareas.Main - Tareas
+2026-02-05 14:38:51.980 [main] INFO  com.tareas.Main - 1. Registrar tarea
+2026-02-05 14:38:51.981 [main] INFO  com.tareas.Main - 2. Listar tareas
+2026-02-05 14:38:51.981 [main] INFO  com.tareas.Main - 3. Buscar por id tarea
+2026-02-05 14:38:51.982 [main] INFO  com.tareas.Main - 4. Cambiar estado de tarea
+2026-02-05 14:38:51.983 [main] INFO  com.tareas.Main - 5. Eliminar tarea por ID
+2026-02-05 14:38:51.983 [main] INFO  com.tareas.Main - 6. Salir
+2026-02-05 14:38:51.984 [main] INFO  com.tareas.Main - Selecciona opción
+2026-02-05 14:39:39.435 [main] INFO  com.tareas.Main - Tareas
+2026-02-05 14:39:39.439 [main] INFO  com.tareas.Main - 1. Registrar tarea
+2026-02-05 14:39:39.440 [main] INFO  com.tareas.Main - 2. Listar tareas
+2026-02-05 14:39:39.440 [main] INFO  com.tareas.Main - 3. Buscar por id tarea
+2026-02-05 14:39:39.440 [main] INFO  com.tareas.Main - 4. Cambiar estado de tarea
+2026-02-05 14:39:39.441 [main] INFO  com.tareas.Main - 5. Eliminar tarea por ID
+2026-02-05 14:39:39.441 [main] INFO  com.tareas.Main - 6. Salir
+2026-02-05 14:39:39.441 [main] INFO  com.tareas.Main - Selecciona opción
+2026-02-05 14:40:01.012 [main] INFO  com.service.ServicioTareaI - Ingresa el id de la tarea a eliminar
+2026-02-05 14:40:49.542 [main] INFO  com.tareas.Main - Tareas
+2026-02-05 14:40:49.544 [main] INFO  com.tareas.Main - 1. Registrar tarea
+2026-02-05 14:40:49.545 [main] INFO  com.tareas.Main - 2. Listar tareas
+2026-02-05 14:40:49.546 [main] INFO  com.tareas.Main - 3. Buscar por id tarea
+2026-02-05 14:40:49.546 [main] INFO  com.tareas.Main - 4. Cambiar estado de tarea
+2026-02-05 14:40:49.546 [main] INFO  com.tareas.Main - 5. Eliminar tarea por ID
+2026-02-05 14:40:49.547 [main] INFO  com.tareas.Main - 6. Salir
+2026-02-05 14:40:49.547 [main] INFO  com.tareas.Main - Selecciona opción
+2026-02-05 14:40:56.579 [main] INFO  com.service.ServicioTareaI - Ingresa la tarea a crear
+2026-02-05 14:40:56.580 [main] INFO  com.service.ServicioTareaI - Ingresa el nombre de la tarea
+2026-02-05 14:40:58.571 [main] INFO  com.service.ServicioTareaI - Ingresa el estado  de la tarea
+2026-02-05 14:40:58.870 [main] INFO  com.tareas.Main - 1. Registrar tarea
+2026-02-05 14:40:58.872 [main] INFO  com.tareas.Main - 2. Listar tareas
+2026-02-05 14:40:58.872 [main] INFO  com.tareas.Main - 3. Buscar por id tarea
+2026-02-05 14:40:58.872 [main] INFO  com.tareas.Main - 4. Cambiar estado de tarea
+2026-02-05 14:40:58.874 [main] INFO  com.tareas.Main - 5. Eliminar tarea por ID
+2026-02-05 14:40:58.874 [main] INFO  com.tareas.Main - 6. Salir
+2026-02-05 14:40:58.875 [main] INFO  com.tareas.Main - Selecciona opción
+2026-02-05 14:41:07.891 [main] INFO  com.service.ServicioTareaI - Ingresa el id de la tarea a eliminar
+2026-02-05 14:41:08.820 [main] INFO  com.service.ServicioTareaI - tarea eliminada exitosamente
+2026-02-05 14:41:08.820 [main] INFO  com.tareas.Main - 1. Registrar tarea
+2026-02-05 14:41:08.821 [main] INFO  com.tareas.Main - 2. Listar tareas
+2026-02-05 14:41:08.821 [main] INFO  com.tareas.Main - 3. Buscar por id tarea
+2026-02-05 14:41:08.822 [main] INFO  com.tareas.Main - 4. Cambiar estado de tarea
+2026-02-05 14:41:08.822 [main] INFO  com.tareas.Main - 5. Eliminar tarea por ID
+2026-02-05 14:41:08.823 [main] INFO  com.tareas.Main - 6. Salir
+2026-02-05 14:41:08.823 [main] INFO  com.tareas.Main - Selecciona opción

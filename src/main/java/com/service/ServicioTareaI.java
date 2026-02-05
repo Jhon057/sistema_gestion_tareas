@@ -49,7 +49,10 @@ public class ServicioTareaI implements IServicioTarea {
     }
 
     @Override
-    public String tareaCompletada() {
+    public String tareaCompletada() throws TareaExcepciones {
+        if (tareas.isEmpty()) {
+            throw new TareaExcepciones("No hay tareas registradas para modificar");
+        }
         int id;
         String estado;
         log.info("Ingrese el id de la tarea a modificar");
@@ -69,11 +72,11 @@ public class ServicioTareaI implements IServicioTarea {
 
     @Override
     public Tarea eliminarTarea() throws TareaExcepciones {
-        log.info("Ingresa el id de la tarea a eliminar");
-        int id = escanear.nextInt();
         if (tareas.isEmpty()) {
             throw new TareaExcepciones("No hay tareas registradas");
         }
+        log.info("Ingresa el id de la tarea a eliminar");
+        int id = escanear.nextInt();
         if (tareas.get(id) == null) {
             throw new TareaExcepciones("No exista la tarea con id: " + id);
         }

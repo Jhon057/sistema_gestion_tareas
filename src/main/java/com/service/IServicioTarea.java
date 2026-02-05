@@ -13,7 +13,7 @@ public interface IServicioTarea {
 
     public List<Tarea> listarTareas() throws TareaExcepciones;
 
-    public String tareaCompletada();
+    public String tareaCompletada() throws TareaExcepciones;
 
     public Tarea eliminarTarea() throws TareaExcepciones;
 
