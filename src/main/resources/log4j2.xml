@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Properties>
+        <!-- Propiedad interna de Log4j (nombre distinto al system property) -->
+        <Property name="APP_LOG_PATH">${sys:LOG_PATH:-logs}</Property>
+
+        <Property name="LOG_PATTERN">
+            %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+        </Property>
+    </Properties>
+
+    <Appenders>
+
+        <RollingFile name="ArchivoLogs"
+            fileName="${APP_LOG_PATH}/app.log"
+            filePattern="${APP_LOG_PATH}/app-%d{yyyy-MM-dd}-%i.log">
+
+            <PatternLayout pattern="${LOG_PATTERN}" />
+
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+                <SizeBasedTriggeringPolicy size="10MB" />
+            </Policies>
+
+            <DefaultRolloverStrategy>
+                <Delete basePath="${APP_LOG_PATH}" maxDepth="1">
+                    <IfFileName glob="app-*.log" />
+
+                    <IfAny>
+                        <IfAccumulatedFileCount exceeds="5" />
+                        <IfLastModified age="7d" />
+                        <IfAccumulatedFileSize exceeds="50MB" />
+                    </IfAny>
+                </Delete>
+            </DefaultRolloverStrategy>
+
+        </RollingFile>
+
+        <Console name="Consola" target="SYSTEM_OUT">
+            <PatternLayout pattern="${LOG_PATTERN}" />
+        </Console>
+
+    </Appenders>
+
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="ArchivoLogs" />
+            <AppenderRef ref="Consola" />
+        </Root>
+    </Loggers>
+
+</Configuration>

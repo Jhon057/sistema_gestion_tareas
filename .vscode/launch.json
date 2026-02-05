@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "com.tareas.Main",
+            "projectName": "tareas",
+            "vmArgs": "-DLOG_PATH=archivo_logs/logs -DLOG_NAME=app"
+        }
+    ]
+}
