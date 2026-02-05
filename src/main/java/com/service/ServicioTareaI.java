@@ -64,7 +64,7 @@ public class ServicioTareaI implements IServicioTarea {
         Tarea existe = tareas.get(id);
         if (existe != null) {
             existe.modificarEstado(estado);
-            log.info("tarea eliminada exitosamente");
+            log.info("tarea actualizada exitosamente");
             return "Se ha actualizado la tarea con éxito";
         }
         return "Tarea no encontrada";
