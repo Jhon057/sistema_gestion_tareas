@@ -25,7 +25,7 @@ public class ServicioTareaI implements IServicioTarea {
         String descripcion = escanear.nextLine().trim().toLowerCase();
         log.info("Ingresa el estado  de la tarea");
         String estado = escanear.nextLine().trim().toLowerCase();
-        if (descripcion.isBlank() || estado.isBlank()) {
+        if (descripcion.isEmpty() && estado.isEmpty()) {
             log.error("Los datos no pueden estar vacíos");
         } else {
             tarea.modificarDescripcion(descripcion);
@@ -49,44 +49,51 @@ public class ServicioTareaI implements IServicioTarea {
         if (tareas.isEmpty()) {
             throw new TareaExcepciones("No hay tareas registradas");
         }
-
         return tareas;
     }
+
 
     @Override
     public String tareaCompletada() throws TareaExcepciones {
         if (tareas.isEmpty()) {
             throw new TareaExcepciones("No hay tareas registradas para modificar");
         }
-        int id;
-        String estado;
-        log.info("Ingrese el id de la tarea a modificar");
-        id = escanear.nextInt();
-        escanear.nextLine();
-        log.info("Ingresa el nuevo estado de la tarea");
-        estado = escanear.nextLine().trim().toLowerCase();
 
-        Tarea existe = tareas.get(id);
-        if (existe != null) {
-            existe.modificarEstado(estado);
-            log.info("tarea actualizada exitosamente");
-            return "Se ha actualizado la tarea con éxito";
+        log.info("Ingrese el id de la tarea a modificar");
+        int id = escanear.nextInt();
+        escanear.nextLine();
+
+        if (id < 0 || id >= tareas.size()) {
+            throw new TareaExcepciones("No existe la tarea con id: " + id);
         }
-        return "Tarea no encontrada";
+
+        log.info("Ingresa el nuevo estado de la tarea");
+        String estado = escanear.nextLine().trim().toLowerCase();
+
+        tareas.get(id).modificarEstado(estado);
+        log.info("Tarea actualizada exitosamente");
+
+        return "Se ha actualizado la tarea con éxito";
     }
+
 
     @Override
     public Tarea eliminarTarea() throws TareaExcepciones {
         if (tareas.isEmpty()) {
             throw new TareaExcepciones("No hay tareas registradas");
         }
+
         log.info("Ingresa el id de la tarea a eliminar");
         int id = escanear.nextInt();
-        if (tareas.get(id) == null) {
-            throw new TareaExcepciones("No exista la tarea con id: " + id);
+        escanear.nextLine();
+
+        if (id < 0 || id >= tareas.size()) {
+            throw new TareaExcepciones("No existe la tarea con id: " + id);
         }
-        log.info("tarea eliminada exitosamente");
+
+        log.info("Tarea eliminada exitosamente");
         return tareas.remove(id);
     }
+
 
 }

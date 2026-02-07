@@ -13,49 +13,60 @@ public class Main {
     private static final Logger log = LoggerFactory.getLogger(Main.class);
     private static final Scanner escanear = new Scanner(System.in);
 
-    public static void main(String[] args) throws TareaExcepciones {
+    public static void main(String[] args) {
         TareaControl tareaControl = new TareaControl();
         log.info("Tareas");
         boolean ejecucion = true;
 
         while (ejecucion) {
-            menu();
-            log.info("Selecciona opción");
-            int seleccion = escanear.nextInt();
-            switch (seleccion) {
-                case 1:
-                    tareaControl.crearTarea();
+            try {
+                menu();
+                log.info("Selecciona opción");
+                int seleccion = escanear.nextInt();
+                escanear.nextLine();
 
-                    break;
-                case 2:
-                    for (int i = 0; i < tareaControl.listarTareas().size(); i++) {
-                        log.info("{}", tareaControl.listarTareas().get(i));
-                    }
-                    break;
-                case 3:
-                    log.info("Ingrese el id de la tarea a buscar");
-                    int id = escanear.nextInt();
-                    tareaControl.listarPorId(id);
-                    log.info("{}", tareaControl.listarPorId(id));
-                    break;
-                case 4:
-                    tareaControl.tareaCompletada();
-                    break;
-                case 5:
-                    tareaControl.eliminarTarea();
-                    break;
-                case 6:
-                    ejecucion = false;
-                    log.info("Saliendo del programa");
-                    break;
+                switch (seleccion) {
+                    case 1:
+                        tareaControl.crearTarea();
+                        break;
 
-                default:
-                    log.error("No existe esa opción");
-                    break;
+                    case 2:
+                        tareaControl.listarTareas().forEach(t -> log.info("{}", t));
+                        break;
+
+                    case 3:
+                        log.info("Ingrese el id de la tarea a buscar");
+                        int id = escanear.nextInt();
+                        escanear.nextLine();
+                        log.info("{}", tareaControl.listarPorId(id));
+                        break;
+
+                    case 4:
+                        tareaControl.tareaCompletada();
+                        break;
+
+                    case 5:
+                        tareaControl.eliminarTarea();
+                        break;
+
+                    case 6:
+                        ejecucion = false;
+                        log.info("Saliendo del programa");
+                        break;
+
+                    default:
+                        log.error("No existe esa opción");
+                }
+
+            } catch (TareaExcepciones e) {
+                log.error("Error: {}", e.getMessage());
+            } catch (Exception e) {
+                log.error("Entrada inválida. Intenta nuevamente.");
+                escanear.nextLine();
             }
         }
-
     }
+
 
     public static void menu() {
         log.info("1. Registrar tarea");
