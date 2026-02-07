@@ -15,10 +15,10 @@ public class ServicioTareaI implements IServicioTarea {
     private static final Logger log = LoggerFactory.getLogger(ServicioTareaI.class);
     private static final Scanner escanear = new Scanner(System.in);
 
-    private List<Tarea> tareas = new ArrayList<>();
+    private final List<Tarea> tareas = new ArrayList<>();
 
     @Override
-    public Tarea crearTarea() {
+    public void crearTarea() {
         Tarea tarea = new Tarea();
         log.info("Ingresa la tarea a crear");
         log.info("Ingresa el nombre de la tarea");
@@ -33,7 +33,6 @@ public class ServicioTareaI implements IServicioTarea {
             tareas.add(tarea);
         }
 
-        return tarea;
     }
 
     @Override
@@ -54,7 +53,7 @@ public class ServicioTareaI implements IServicioTarea {
 
 
     @Override
-    public String tareaCompletada() throws TareaExcepciones {
+    public void cambiarEstado() throws TareaExcepciones {
         if (tareas.isEmpty()) {
             throw new TareaExcepciones("No hay tareas registradas para modificar");
         }
@@ -73,12 +72,33 @@ public class ServicioTareaI implements IServicioTarea {
         tareas.get(id).modificarEstado(estado);
         log.info("Tarea actualizada exitosamente");
 
-        return "Se ha actualizado la tarea con éxito";
+    }
+
+    @Override
+    public void cambiarNombreTarea() throws TareaExcepciones {
+        if (tareas.isEmpty()) {
+            throw new TareaExcepciones("No hay tareas registradas para modificar");
+        }
+
+        log.info("Ingrese el id_tarea a modificar");
+        int id = escanear.nextInt();
+        escanear.nextLine();
+
+        if (id < 0 || id >= tareas.size()) {
+            throw new TareaExcepciones("No existe la tarea con id: " + id);
+        }
+
+        log.info("Ingresa el nuevo descripción de la tarea");
+        String nombreTarea = escanear.nextLine().trim().toLowerCase();
+
+        tareas.get(id).modificarDescripcion(nombreTarea);
+        log.info("Nombre tarea actualizada exitosamente");
+
     }
 
 
     @Override
-    public Tarea eliminarTarea() throws TareaExcepciones {
+    public void eliminarTarea() throws TareaExcepciones {
         if (tareas.isEmpty()) {
             throw new TareaExcepciones("No hay tareas registradas");
         }
@@ -92,7 +112,7 @@ public class ServicioTareaI implements IServicioTarea {
         }
 
         log.info("Tarea eliminada exitosamente");
-        return tareas.remove(id);
+        tareas.remove(id);
     }
 
 

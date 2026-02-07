@@ -7,14 +7,16 @@ import com.models.Tarea;
 
 public interface IServicioTarea {
 
-    public Tarea crearTarea();
+    public void crearTarea();
 
     public Tarea obtenerPorId(int id) throws TareaExcepciones;
 
     public List<Tarea> listarTareas() throws TareaExcepciones;
 
-    public String tareaCompletada() throws TareaExcepciones;
+    public void cambiarEstado() throws TareaExcepciones;
 
-    public Tarea eliminarTarea() throws TareaExcepciones;
+    public void cambiarNombreTarea() throws TareaExcepciones;
+
+    public void eliminarTarea() throws TareaExcepciones;
 
 }

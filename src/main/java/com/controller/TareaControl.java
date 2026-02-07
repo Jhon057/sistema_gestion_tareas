@@ -8,7 +8,7 @@ import com.service.ServicioTareaI;
 
 public class TareaControl {
 
-    private ServicioTareaI servicioTarea = new ServicioTareaI();
+    private final ServicioTareaI servicioTarea = new ServicioTareaI();
 
     public void crearTarea() {
         servicioTarea.crearTarea();
@@ -22,8 +22,12 @@ public class TareaControl {
         return servicioTarea.obtenerPorId(id);
     }
 
-    public void tareaCompletada() throws TareaExcepciones {
-        servicioTarea.tareaCompletada();
+    public void cambiarEstado() throws TareaExcepciones {
+        servicioTarea.cambiarEstado();
+    }
+
+    public void cambiarNombreTarea() throws TareaExcepciones {
+        servicioTarea.cambiarNombreTarea();
     }
 
     public void eliminarTarea() throws TareaExcepciones {

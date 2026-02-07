@@ -33,4 +33,13 @@ class TareaTest {
 
         assertEquals("COMPLETADA", tarea.obtenerEstado());
     }
+
+    @Test
+    void modificarNombreTarea() {
+        Tarea tarea = new Tarea("Aprender Java", "PENDIENTE");
+
+        tarea.modificarDescripcion("Aprender Python");
+
+        assertEquals("Aprender Python", tarea.obtenerDescripcion());
+    }
 }

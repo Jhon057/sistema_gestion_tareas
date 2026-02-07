@@ -42,14 +42,17 @@ public class Main {
                         break;
 
                     case 4:
-                        tareaControl.tareaCompletada();
+                        tareaControl.cambiarEstado();
                         break;
-
                     case 5:
-                        tareaControl.eliminarTarea();
+                        tareaControl.cambiarNombreTarea();
                         break;
 
                     case 6:
+                        tareaControl.eliminarTarea();
+                        break;
+
+                    case 7:
                         ejecucion = false;
                         log.info("Saliendo del programa");
                         break;
@@ -73,7 +76,8 @@ public class Main {
         log.info("2. Listar tareas");
         log.info("3. Buscar por id tarea");
         log.info("4. Cambiar estado de tarea");
-        log.info("5. Eliminar tarea por ID");
-        log.info("6. Salir");
+        log.info("5. Cambiar nombre de la tarea");
+        log.info("6. Eliminar tarea por ID");
+        log.info("7. Salir");
     }
 }
